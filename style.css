@@ -1,0 +1,171 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: radial-gradient(circle at 80% 20%, #e5eef9 0%, #f3f5f8 50%, #eddfe9 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 440px;
+}
+
+/* Boîte principale */
+.login-box {
+    background: #ffffff;
+    padding: 44px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
+}
+
+/* Logo Microsoft */
+.logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.ms-logo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    width: 21px;
+    height: 21px;
+    margin-right: 12px;
+}
+
+.ms-logo span {
+    display: block;
+}
+
+.red { background-color: #f25022; }
+.green { background-color: #7fba00; }
+.blue { background-color: #00a4ef; }
+.yellow { background-color: #ffb900; }
+
+.brand-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #737373;
+}
+
+h2 {
+    color: #1b1b1b;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* Formulaire et Inputs */
+.input-group {
+    margin-bottom: 16px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 6px 10px;
+    font-size: 15px;
+    border: none;
+    border-bottom: 1px solid #666666;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+input[type="text"]:focus {
+    border-bottom: 2px solid #0067b8;
+    padding-bottom: 5px;
+}
+
+/* Textes et Liens */
+p {
+    font-size: 13px;
+    color: #1b1b1b;
+    margin-bottom: 14px;
+}
+
+a {
+    color: #0067b8;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.recovery-text {
+    margin-bottom: 32px;
+}
+
+/* Bouton Suivant */
+.button-group {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-primary {
+    background-color: #0067b8;
+    color: #ffffff;
+    border: none;
+    padding: 6px 20px;
+    min-width: 108px;
+    font-size: 15px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn-primary:hover {
+    background-color: #005da6;
+}
+
+/* Options de connexion */
+.options-box {
+    background: #ffffff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.btn-options {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 12px 44px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-align: left;
+}
+
+.btn-options span {
+    font-size: 15px;
+    color: #2b2b2b;
+    margin-left: 12px;
+}
+
+.btn-options:hover {
+    background-color: #f2f2f2;
+}
+
+/* Footer */
+footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 12px 20px;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+footer a {
+    color: #000000;
+    font-size: 11px;
+}
