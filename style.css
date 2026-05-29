@@ -1,0 +1,193 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', -apple-system, Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background: radial-gradient(circle at 80% 20%, #e5eef9 0%, #f3f5f8 50%, #eddfe9 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+}
+
+.container {
+    width: 100%;
+    max-width: 440px;
+}
+
+.login-box {
+    background: #ffffff;
+    padding: 44px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
+    min-height: 338px; /* يحافظ على ثبات أبعاد الصندوق أثناء الانتقال */
+}
+
+/* تنسيقات الهيدر وزر العودة */
+.identity-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    height: 24px;
+}
+
+.btn-back {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 8px;
+    padding: 2px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-back:hover {
+    background-color: rgba(0,0,0,0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.ms-logo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    width: 21px;
+    height: 21px;
+    margin-right: 12px;
+}
+
+.ms-logo span { display: block; }
+.red { background-color: #f25022; }
+.green { background-color: #7fba00; }
+.blue { background-color: #00a4ef; }
+.yellow { background-color: #ffb900; }
+
+.brand-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #737373;
+}
+
+/* عرض حساب المستخدم المستهدف */
+.user-display {
+    font-size: 15px;
+    color: #1b1b1b;
+    margin-bottom: 16px;
+    text-align: left;
+}
+
+h2 {
+    color: #1b1b1b;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* حقول الإدخال */
+.input-group {
+    margin-bottom: 16px;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 6px 10px 6px 0;
+    font-size: 15px;
+    border: none;
+    border-bottom: 1px solid #666666;
+    outline: none;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+    border-bottom: 2px solid #0067b8;
+}
+
+/* النصوص والروابط */
+.text-link {
+    font-size: 13px;
+    color: #1b1b1b;
+    margin-bottom: 14px;
+    text-align: left;
+}
+
+a {
+    color: #0067b8;
+    text-decoration: none;
+}
+
+a:hover { text-decoration: underline; }
+
+/* أزرار التحكم */
+.button-group {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 32px;
+}
+
+.btn-primary {
+    background-color: #0067b8;
+    color: #ffffff;
+    border: none;
+    padding: 6px 20px;
+    min-width: 108px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.btn-primary:hover { background-color: #005da6; }
+
+/* صندوق خيارات تسجيل الدخول السفلي */
+.options-box {
+    background: #ffffff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.btn-options {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 12px 44px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.btn-options span {
+    font-size: 15px;
+    color: #2b2b2b;
+    margin-left: 12px;
+}
+
+.btn-options:hover { background-color: #f2f2f2; }
+
+/* التذييل */
+footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 12px 20px;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+footer a {
+    color: #000000;
+    font-size: 11px;
+}
+
+/* كلاسات التحكم في الإظهار والإخفاء عبر JS */
+.hidden { display: none !important; }
+.step-content { display: none; }
+.step-content.active { display: block; }

